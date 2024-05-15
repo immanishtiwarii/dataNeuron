@@ -10,7 +10,7 @@ const AddEntry = ({ fetchData,fetchApiCounts }) => {
     try {
       if (name && age && hobby) {
         await axios.post(
-          "http://localhost:5000/api/entry/add",
+          `${process.env.REACT_APP_BASE_URL}/api/entry/add`,
           {
             name,
             age,
