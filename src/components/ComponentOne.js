@@ -61,7 +61,7 @@ const ComponentOne = () => {
                       }
                     />
                     <input
-                      type="text"
+                      type="number"
                       value={editedEntries[entry._id].age}
                       onChange={(e) =>
                         handleChange(entry._id, "age", e.target.value)
