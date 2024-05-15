@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AddEntry = ({ fetchData,fetchApiCounts }) => {
+const AddEntry = ({ fetchData, fetchApiCounts }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [hobby, setHobby] = useState("");
+  const [error, setError] = useState("");
 
   const handleAdd = async () => {
     try {
@@ -27,9 +28,9 @@ const AddEntry = ({ fetchData,fetchApiCounts }) => {
         setAge("");
         setHobby("");
         fetchData();
-        fetchApiCounts() // Uncomment this line if you want to fetch data after adding entry
+        fetchApiCounts(); // Uncomment this line if you want to fetch data after adding entry
       } else {
-        console.error("Name, age, and hobby are required");
+        alert("Name, age, and hobby are required");
       }
     } catch (error) {
       console.error("Error adding entry:", error);
